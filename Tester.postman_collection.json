@@ -1,0 +1,122 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Tester",
+		"_postman_id": "0a0d4590-474e-35b9-a3c4-d3d087f9e7ed",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Start Monitoring",
+			"request": {
+				"url": "localhost:8085/rest/start-monitoring",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hostname\":\"api.test.paysafe.com\",\n\t\"interval\":5\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Overview of monitoring process",
+			"request": {
+				"url": "localhost:8085/rest/overview",
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hostname\":\"api.test.paysafe.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Stop Monitoring",
+			"request": {
+				"url": "localhost:8085/rest/stop-monitoring",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hostname\":\"api.test.paysafe.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "host validation",
+			"request": {
+				"url": "https://api.test.paysafe.com/accountmanagement/monitor",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test case for Stop-Monitoring endpoint",
+			"request": {
+				"url": "localhost:8085/rest/stop-monitoring",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Negative Test case for 404",
+			"request": {
+				"url": "localhost:8085/rest/stop-monitoring1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
