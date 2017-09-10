@@ -10,6 +10,6 @@ import net.rest.response.ResponseWriter;
 @Provider
 public class InvalidRequestExceptionMapper implements ExceptionMapper<InvalidRequestException> {
 	public Response toResponse(InvalidRequestException ex) {
-		return ResponseWriter.write(" -- Bad Request -- ", ResponseStatus.BAD_REQUEST);
+		return ResponseWriter.write(ex.getMessage(), ResponseStatus.BAD_REQUEST);
 	}
 }

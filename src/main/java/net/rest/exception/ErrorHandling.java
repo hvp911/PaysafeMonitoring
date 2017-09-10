@@ -9,6 +9,7 @@ import net.rest.exception.ApiExceptionMapper;
 public class ErrorHandling extends AbstractModule {
 	@Override
 	protected void configure() {
+		bind(NotFoundExceptionMapper.class).toInstance(new NotFoundExceptionMapper());
 		bind(ApiExceptionMapper.class).toInstance(new ApiExceptionMapper());
 		bind(InvalidRequestExceptionMapper.class).toInstance(new InvalidRequestExceptionMapper());
 	}

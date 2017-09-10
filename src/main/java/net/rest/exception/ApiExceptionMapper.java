@@ -10,6 +10,6 @@ import net.rest.response.ResponseWriter;
 @Provider
 public class ApiExceptionMapper implements ExceptionMapper<APIException> {
 	public Response toResponse(APIException ex) {
-		return ResponseWriter.write("Some iNternal error", ResponseStatus.INTERNAL_ERROR);
+		return ResponseWriter.write("Internal Service Exception", ResponseStatus.INTERNAL_ERROR);
 	}
 }
