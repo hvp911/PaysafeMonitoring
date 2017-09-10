@@ -44,10 +44,6 @@ public class StartMonitoring {
 	}
 
 	public static class ServerMonitoringBody {
-
-		private String hostname;
-		private int interval;
-
 		public void setInterval(int interval) {
 			this.interval = interval;
 		}
@@ -56,18 +52,21 @@ public class StartMonitoring {
 			return interval;
 		}
 
-		public String getHostName() {
+		public String getHostname() {
 			return hostname;
 		}
 
-		public void setHostName(String hostName) {
-			this.hostname = hostName;
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
 		}
 
 		@Override
 		public String toString() {
 			return super.toString();
 		}
+
+		private String hostname;
+		private int interval;
 	}
 
 	private SchedulersHandler schedulerHandler;

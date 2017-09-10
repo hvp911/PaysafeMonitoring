@@ -39,14 +39,11 @@ public class StopMonitoring {
 	}
 
 	public static class ServerMonitoringBody {
-
-		private String hostname;
-
-		public String getHostName() {
+		public String getHostname() {
 			return hostname;
 		}
 
-		public void setHostName(String hostname) {
+		public void setHostname(String hostname) {
 			this.hostname = hostname;
 		}
 
@@ -54,6 +51,8 @@ public class StopMonitoring {
 		public String toString() {
 			return super.toString();
 		}
+
+		private String hostname;
 	}
 
 	private SchedulersHandler schedulerHandler;

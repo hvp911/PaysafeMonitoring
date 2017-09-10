@@ -23,24 +23,21 @@ public class Overview {
 		if (monitoringBody == null) {
 			throw new InvalidRequestException("Invalid Request body.");
 		}
-		if (!serverStatusModel.validateHostName(monitoringBody.hostName)) {
+		if (!serverStatusModel.validateHostName(monitoringBody.hostname)) {
 			throw new InvalidRequestException("No moniotring details found for requested host.");
 		}
-		return ResponseWriter.ok(serverStatusModel.getServerStatusList(monitoringBody.hostName));
+		return ResponseWriter.ok(serverStatusModel.getServerStatusList(monitoringBody.hostname));
 	}
 
 	private static class ServerMonitoringBody {
-
-		private String hostName;
-
 		@SuppressWarnings("unused")
-		public String getHostName() {
-			return hostName;
+		public String getHostname() {
+			return hostname;
 		}
 
 		@SuppressWarnings("unused")
-		public void setHostName(String hostName) {
-			this.hostName = hostName;
+		public void setHostname(String hostname) {
+			this.hostname = hostname;
 		}
 
 		@Override
@@ -48,6 +45,7 @@ public class Overview {
 			return "Server Overview Body";
 		}
 
+		private String hostname;
 	}
 
 	ServerStatusModel serverStatusModel;

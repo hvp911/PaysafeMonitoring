@@ -36,7 +36,7 @@ dependencies {
 }
 
 gretty {
-    httpPort = 8003
+    httpPort = 8085
     contextPath = '/'
     servletContainer = 'jetty9'
     scanInterval = 0
