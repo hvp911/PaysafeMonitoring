@@ -15,14 +15,14 @@ Stop monitoring of a host.
 POST /rest/stop-monitoring
 payload:
 {
-	"hostname":"api.test.paysafe.com",
+	"hostname":"api.test.paysafe.com"
 }
 
 Overview of a host.
 POST /rest/overview
 payload:
 {
-	"hostname":"api.test.paysafe.com",
+	"hostname":"api.test.paysafe.com"
 }
 
 
