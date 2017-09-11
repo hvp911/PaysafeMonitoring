@@ -18,7 +18,7 @@ public class StopMonitoring {
 	}
 
 	@POST
-	@Path("/stop-monitoring")
+	@Path("/rest/stop-monitoring")
 	public Response stopServerMonitoring(ServerMonitoringBody monitoringBody) throws APIException {
 		if (monitoringBody == null) {
 			throw new InvalidRequestException("Invalid Request body.");

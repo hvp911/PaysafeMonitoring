@@ -11,7 +11,7 @@ import net.rest.response.ResponseWriter;
 public class HelloWorldHandler {
 
 	@GET
-	@Path("/helloworld")
+	@Path("/rest/helloworld")
 	public Response startUp() throws APIException {
 		return ResponseWriter.ok("helloworld");
 	}

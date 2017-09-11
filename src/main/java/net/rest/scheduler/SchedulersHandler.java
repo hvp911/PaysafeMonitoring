@@ -60,8 +60,7 @@ public class SchedulersHandler {
 			monitoringScheduler.scheduleAtFixedRate(new Runnable() {
 				@Override
 				public void run() {
-					String url = ApplicationConstants.HTTP_PREFIX + hostName + ApplicationConstants.MONITORING_ENDPOINT;
-					String serverStatus = httpUtility.getServerStatus(url);
+					String serverStatus = httpUtility.getServerStatus(hostName);
 					serverStatusModel.updateServerStatusModel(hostName, serverStatus);
 				}
 			}, 0, interval, TimeUnit.SECONDS);

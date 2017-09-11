@@ -21,7 +21,7 @@ public class StartMonitoring {
 	}
 
 	@POST
-	@Path("/start-monitoring")
+	@Path("/rest/start-monitoring")
 	public Response startServerMonitoring(ServerMonitoringBody monitoringBody) throws APIException {
 		if (monitoringBody == null) {
 			throw new InvalidRequestException("Invalid Request body.");

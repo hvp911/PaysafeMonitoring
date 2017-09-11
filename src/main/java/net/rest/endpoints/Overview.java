@@ -17,7 +17,7 @@ public class Overview {
 	}
 
 	@POST
-	@Path("/overview")
+	@Path("/rest/overview")
 	public Response startUp(ServerMonitoringBody monitoringBody) throws APIException {
 		// TODO: As part of quick solution, throwing exception like following.
 		if (monitoringBody == null) {

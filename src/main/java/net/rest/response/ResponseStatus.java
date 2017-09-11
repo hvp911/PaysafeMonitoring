@@ -4,7 +4,8 @@ import javax.ws.rs.core.Response;
 
 public enum ResponseStatus implements ResponseStatusType {
 
-	INTERNAL_ERROR(Response.Status.INTERNAL_SERVER_ERROR), 
+    INTERNAL_ERROR(Response.Status.INTERNAL_SERVER_ERROR), 
+    METHOD_NOT_ALLOWED(Response.Status.METHOD_NOT_ALLOWED), 
 	BAD_REQUEST(Response.Status.BAD_REQUEST), 
 	UNAUTHORIZED(Response.Status.UNAUTHORIZED), 
 	NOT_FOUND(Response.Status.NOT_FOUND),
@@ -30,6 +31,15 @@ public enum ResponseStatus implements ResponseStatusType {
 	public String getMessage() {
 		return this.message;
 	}
+
+	public static ResponseStatus fromHttpStatusCode(final int httpStatusCode) {
+        for (ResponseStatus s : ResponseStatus.values()) {
+            if (s.httpStatusCode.getStatusCode() == httpStatusCode) {
+                return s;
+            }
+        }
+        return INTERNAL_ERROR;
+    }
 
 	private Response.Status httpStatusCode;
 	private String message;
