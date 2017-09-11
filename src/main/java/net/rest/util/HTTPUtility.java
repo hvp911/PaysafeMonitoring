@@ -14,11 +14,11 @@ import net.rest.constants.ApplicationConstants;
 public class HTTPUtility {
 
 	public boolean reachabilityCheck(String hostName) {
-		String url = ApplicationConstants.HTTP_PREFIX + hostName + ApplicationConstants.MONITORING_ENDPOINT;
-		return (getServerStatus(url) != null);
+		return (getServerStatus(hostName) != null);
 	}
 
-	public String getServerStatus(String url) {
+	public String getServerStatus(String hostName) {
+        String url = ApplicationConstants.HTTP_PREFIX + hostName + ApplicationConstants.MONITORING_ENDPOINT;
 		HttpGet request = new HttpGet(url);
 		String responseBody;
 		HttpClient client = HttpClientBuilder.create().build();
